@@ -9,11 +9,18 @@ package com.java.string;
 
 public class FizzBuzz {
 
-    public  void fizzBuzz(int number){
+    String spaceSeparator =" ";
+
+    public  String fizzBuzz(int number){
+
+        StringBuilder sb = new StringBuilder();
 
         for(int i=1;i<=number ;i++){
-            String outString = new Integer(i).toString();
-            boolean isDivisibleByThree=false,isDivisibleByFive=false;
+
+            String outString = Integer.toString(i);
+
+            boolean isDivisibleByThree=false;
+            boolean isDivisibleByFive=false;
             if(i%3==0){
                 isDivisibleByThree =true;
                 outString="Fizz";
@@ -22,14 +29,11 @@ public class FizzBuzz {
                 isDivisibleByFive=true;
                 outString="Buzz";
             }
-
-
             if(isDivisibleByFive && isDivisibleByThree) outString="FizzBuzz";
-
-            System.out.println(outString+" ");
-
+            sb.append(outString).append(spaceSeparator);
         }
 
+        return sb.toString();
 
     }
 }
